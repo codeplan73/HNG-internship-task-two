@@ -14,8 +14,8 @@ import { shoppingMenuItems, moreLinks } from "@/data/link";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col z-0">
-      <div className="bg-gray container flex flex-col md:px-10 py-4 md:py-8 md:flex-row md:items-start md:justify-evenly gap-12">
+    <footer className="flex flex-col z-0 w-full">
+      <div className="bg-gray flex flex-col px-8 md:px-16 py-6 md:py-8 md:flex-row md:items-start md:justify-evenly gap-12">
         <div className="flex flex-col text-white gap-2 w-full md:w-4/12">
           <Logo />
           <p className="text-coolGray text-sm font-light my-4">
@@ -106,7 +106,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="container font-light text-xs text-center bg-darkGray text-frenchGray py-4">
+      <p className=" font-light text-xs text-center bg-darkGray text-frenchGray py-4">
         Yetunde.io & Codeplan &copy; - All rights reserved
       </p>
     </footer>
