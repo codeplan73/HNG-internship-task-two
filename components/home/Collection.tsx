@@ -14,7 +14,7 @@ const Collection = () => {
           miss out
         </p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 w-full">
         {productCollection.map((product) => (
           <CollectionCard key={product.id} product={product} />
         ))}

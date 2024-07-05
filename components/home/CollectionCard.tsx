@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Product {
   id: number;
@@ -15,16 +16,19 @@ interface CollectionCardProps {
 
 const CollectionCard: React.FC<CollectionCardProps> = ({ product }) => {
   return (
-    <div className="flex flex-col items-center">
+    <Link
+      href={`/products/${product.id}`}
+      className="flex flex-col gap-4 items-center hover:drop-shadow-2xl transition-all duration-300 ease-in-out cursor-pointer"
+    >
       <Image
         src={product.image}
         alt={product.name}
         height={100}
         width={100}
-        className="w-full h-56 md:h-full aspect-auto rounded-2xl shadow"
+        className="max-w-md w-full h-80 rounded-2xl shadow"
       />
-      <h4>{product.name}</h4>
-    </div>
+      <p className="text-sm font-semibold">{product.name}</p>
+    </Link>
   );
 };
 
