@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Timbu-Express E-commerce App
+
+Welcome to the Timbu-Express E-commerce App repository. This project is an e-commerce platform designed to provide a seamless shopping experience for users. It's built with modern web technologies and is designed to be scalable, secure, and easy to maintain.
+
+## Features
+
+- Product listing with categories and filters
+- Shopping cart and checkout process
+- Payment gateway integration similation
+- Responsive design for mobile and desktop
+
+## Built With
+
+- [Node.js](https://nodejs.org/en/) - JavaScript runtime for the backend
+- [Nextjs](https://nextjs.org/) - Frontend framework for building fullstack application
+- [Zustand](https://zustand.js.org/) - State management library
+- [Tailwindcss](https://tailwindcss.com/) - Frontend framework for responsive design
+- [Shandcn](https://ui.shadcn.com/) - Frontend framework for responsive design
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+- Node.js
+- MongoDB
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your_username_/timbu-express.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd timbu-express
+```
+
+3. Install NPM packages:
+
+```bash
+npm install
+```
+
+4. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contributing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 
-## Learn More
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Distributed under the MIT License. See `LICENSE` for more information.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contact
 
-## Deploy on Vercel
+Your Name - [@codecps](https://twitter.com/codecps) - omonzebaguan.grn@gmail.com
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Project Link: [https://github.com/codeplan73/HNG-internship-task-two.gits](https://github.com/codeplan73/HNG-internship-task-two.git)
