@@ -15,7 +15,7 @@ const Hero = () => {
       >
         <div className="flex flex-col">
           <p className="text-xs text-neutral font-thin mb-2">New Arrival</p>
-          <h2 className="text-2xl md:text-3xl text-primaryColor font-semibold leading-tight">
+          <h2 className="text-2xl md:text-4xl text-primaryColor font-semibold leading-tight">
             Discover Our
           </h2>
           <h2 className="text-2xl md:text-4xl text-primaryColor font-semibold">

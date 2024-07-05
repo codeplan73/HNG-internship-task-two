@@ -12,6 +12,10 @@ export default function Home() {
       </section>
 
       <section>
+        <p className="text-2xl">product and filter section</p>
+      </section>
+
+      <section>
         <DiscountSale />
       </section>
     </div>
