@@ -1,3 +1,4 @@
+import Collection from "@/components/home/Collection";
 import Hero from "@/components/home/Hero";
 import Image from "next/image";
 
@@ -6,7 +7,9 @@ export default function Home() {
     <div className="w-full">
       <Hero />
 
-      <section></section>
+      <section>
+        <Collection />
+      </section>
     </div>
   );
 }
