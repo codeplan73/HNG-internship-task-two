@@ -30,6 +30,8 @@ const config = {
         neutral: "#17183B",
         coolGray: "#A2A3B1",
         frenchGray: "#D1D1D8",
+        gray: "#323334",
+        darkGray: "#222222",
         white: "#FFFFFF",
         primary: {
           DEFAULT: "hsl(var(--primary))",

@@ -9,12 +9,7 @@ import { FiSearch } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import classnames from "classnames";
 
-const menuItems = [
-  { label: "Home", href: "/" },
-  { label: "Designers", href: "/designers" },
-  { label: "About Us", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
+import { menuItems } from "@/data/link";
 
 const iconMenu = [
   {
@@ -35,10 +30,10 @@ const Navbar = () => {
   const [open, setIsOpen] = useState(false);
   const currentPath = usePathname();
   return (
-    <nav className="container relative flex items-center justify-between py-4 md:py-8 shadow drop-shadow">
+    <nav className="container relative flex items-center justify-between py-6 md:py-8 shadow drop-shadow z-50">
       <Logo />
       <ul className="hidden md:flex items-center justify-start gap-8">
-        {menuItems.map((link) => (
+        {menuItems?.map((link) => (
           <li key={link.label}>
             <Link
               href={link.href}
@@ -66,7 +61,7 @@ const Navbar = () => {
         </Link>
       </ul>
 
-      <ul className="flex items-center gap-4 text-md">
+      <ul className="flex md:hidden items-center gap-4 text-md">
         <Link href="/cart" className="flex relative">
           <RiShoppingCart2Line className="text-xl text-neutral cursor-pointer hover:text-primaryColor" />
           <span className="text-primaryColor absolute bg-white rounded-full text-xs -top-2 left-2 px-1">
@@ -81,13 +76,13 @@ const Navbar = () => {
 
       {open && (
         <div
-          className="fixed inset-0 bg-black opacity-70 z-10 h-screen"
+          className="fixed inset-0 bg-black opacity-70 z-20 h-screen"
           onClick={() => setIsOpen(false)}
         ></div>
       )}
 
       <ul
-        className={`container w-8/12 gap-8  py-4 absolute z-20 bg-white h-screen backdrop:bg-slate-400 left-0 top-0 transform ${
+        className={`container md:hidden w-8/12 gap-8  py-4 absolute z-20 bg-white h-screen backdrop:bg-slate-400 left-0 top-0 transform ${
           open ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out`}
       >
