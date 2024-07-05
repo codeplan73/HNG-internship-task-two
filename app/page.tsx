@@ -1,6 +1,6 @@
 import Collection from "@/components/home/Collection";
+import DiscountSale from "@/components/home/DiscountSale";
 import Hero from "@/components/home/Hero";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -9,6 +9,10 @@ export default function Home() {
 
       <section>
         <Collection />
+      </section>
+
+      <section>
+        <DiscountSale />
       </section>
     </div>
   );
