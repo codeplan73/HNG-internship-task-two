@@ -1,9 +1,8 @@
 import React from "react";
 import CollectionCard from "./CollectionCard";
-import productCollection from "@/data/products.json";
+import { productCollection } from "@/data/products";
 
 const Collection = () => {
-  const products = productCollection.productCollection; // Access the 'productCollection' array from the imported JSON file
   return (
     <div className="container flex flex-col gap-10 py-10 items-center w-full">
       <div className="flex flex-col items-center">
@@ -16,13 +15,9 @@ const Collection = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 w-full">
-        {products.map(
-          (
-            product // Use the 'map' function on the 'products' array
-          ) => (
-            <CollectionCard key={product.id} product={product} />
-          )
-        )}
+        {productCollection.map((product) => (
+          <CollectionCard key={product.id} product={product} />
+        ))}
       </div>
     </div>
   );

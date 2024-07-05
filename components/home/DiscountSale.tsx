@@ -4,7 +4,7 @@ import Link from "next/link";
 const DiscountSale = () => {
   return (
     <div
-      className="w-full md:w-[100vw] bg-no-repeat bg-bottom  bg-cover h-[60vh] px-12 md:h-[73vh] flex items-center justify-center md:justify-start "
+      className="w-full md:w-[100vw] bg-no-repeat bg-bottom  bg-cover h-[60vh] px-12 md:h-[73vh] flex items-center justify-center md:justify-start"
       style={{
         backgroundImage: "url('/footer-hero.png')",
       }}
