@@ -49,6 +49,8 @@ interface Product {
   name: string;
   description: string;
   price: number;
+  rating: number;
+  color: string[];
   image: string;
 }
 

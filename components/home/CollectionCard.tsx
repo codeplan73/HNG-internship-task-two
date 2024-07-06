@@ -7,7 +7,9 @@ interface Product {
   name: string;
   description: string;
   price: number;
+  rating: number;
   image: string;
+  color: string[];
 }
 
 interface CollectionCardProps {
