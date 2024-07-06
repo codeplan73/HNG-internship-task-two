@@ -10,13 +10,14 @@ import {
 import Link from "next/link";
 import { products } from "@/data/products";
 import { IoIosArrowForward } from "react-icons/io";
+import { BsDot, BsHeart } from "react-icons/bs";
 
 interface Props {
   params: { id: string };
 }
 
 const ProductDetailPage = ({ params }: Props) => {
-  const [color, setColor] = useState<null | string>(null);
+  const [selectedColor, setSelectedColor] = useState<null | string>(null);
   const product = products.find(
     (product) => product.id === parseInt(params.id)
   );
@@ -68,32 +69,60 @@ const ProductDetailPage = ({ params }: Props) => {
               {product.rating}/5.0 ({product.totalRating})
             </p>
           </div>
-          <p className="text-sm text-gray">{product.description}</p>
+          <p className="text-sm text-gray ">{product.description}</p>
           <div className="flex items-center gap-2">
             <div className="flex gap-2">
-              {product.color.map((color, index) => (
+              {product.color.map((color) => (
                 <div
                   key={color}
                   style={{ backgroundColor: color }}
                   onClick={() => {
-                    setColor(product.color[index]);
+                    setSelectedColor(color);
                     console.log(color);
                   }}
-                  className="w-4 h-4 rounded-full cursor-pointer"
+                  className={`w-4 h-4 rounded-full cursor-pointer ${
+                    selectedColor === color
+                      ? "border-2 border-darkGray"
+                      : "border border-transparent"
+                  }`}
                   title={color}
                 ></div>
               ))}
             </div>
           </div>
         </div>
+
+        <div className="flex items-center justify-between space-x-4">
+          <div className="flex items-center gap-4 border border-coolGray p-2 px-4">
+            <button className="text-xl">-</button>
+            <p className="">1</p>
+            <button className="text-xl">+</button>
+          </div>
+          <button className="bg-primaryColor px-4 py-3 rounded text-white text-md">
+            Add to cart
+          </button>
+        </div>
+
+        <div className="flex items-center">
+          <p className="text-xs">Free 3-5 day shipping</p>
+          <BsDot />
+          <p className="text-xs">Tool-free assembly</p>
+          <BsDot />
+          <p className="text-xs">30-day trial </p>
+        </div>
+
+        <button className="flex items-center space-x-1 text-xs text-primaryColor">
+          <BsHeart />
+          <span>Add to wishlist</span>
+        </button>
       </div>
-      <div className="w-full md:w-8/12 py-10 mx-auto px-20 flex items-center justify-center">
+      <div className="w-full md:w-8/12 py-10 mx-auto md:px-20 flex items-center justify-center">
         <Image
           src={product.image}
           alt={product.name}
           width={1000}
           height={1000}
-          className="h-96 w-96 object-cover"
+          className=" md:h-96 md:w-96 object-cover"
         />
       </div>
     </div>
