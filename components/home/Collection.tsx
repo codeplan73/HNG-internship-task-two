@@ -1,6 +1,7 @@
 import React from "react";
-import CollectionCard from "./CollectionCard";
 import { productCollection } from "@/data/products";
+import Image from "next/image";
+import CollectionCard from "./CollectionCard";
 
 const Collection = () => {
   return (
@@ -10,14 +11,27 @@ const Collection = () => {
           Browse Our Popular Collection
         </h2>
         <p className="text-neutral text-sm text-center">
-          This are the most product from our collections you {`dont't`} want to
-          miss out
+          These are the most popular products from our collections you dont want
+          to miss out on.
         </p>
       </div>
-      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 w-full"> */}
-      <div className="w-full flex items-center justify-start overflow-x-auto gap-8">
+      {/* Fix: Updated the container to ensure it's scrollable on the x-axis on mobile devices */}
+      <div className="flex flex-nowrap items-start gap-8 overflow-x-auto py-4`">
         {productCollection.map((product) => (
           <CollectionCard key={product.id} product={product} />
+          // <div
+          //   key={product.id}
+          //   className="flex-shrink-0 flex flex-col gap-4 items-center hover:drop-shadow-2xl transition-all duration-300 ease-in-out cursor-pointer max-w-md"
+          // >
+          //   <Image
+          //     src={product.image}
+          //     alt={product.name}
+          //     height={100}
+          //     width={100}
+          //     className="max-w-md w-full h-80 rounded-2xl shadow"
+          //   />
+          //   <p className="text-sm font-semibold">{product.name}</p>
+          // </div>
         ))}
       </div>
     </div>

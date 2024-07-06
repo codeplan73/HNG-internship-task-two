@@ -11,7 +11,8 @@ const CollectionCard: React.FC<CollectionCardProps> = ({ product }) => {
   return (
     <Link
       href={`/products/${product.id}`}
-      className="flex flex-col gap-4 items-center hover:drop-shadow-2xl transition-all duration-300 ease-in-out cursor-pointer"
+      key={product.id}
+      className="flex-shrink-0 flex py-4 flex-col gap-4 items-center hover:drop-shadow-2xl transition-all duration-300 ease-in-out cursor-pointer max-w-md"
     >
       <Image
         src={product.image}
