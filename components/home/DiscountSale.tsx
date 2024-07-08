@@ -25,7 +25,7 @@ const DiscountSale = () => {
           ducimus natus nemo.
         </p>
         <Link
-          className="text-primaryColor uppercase font-semibold border border-primaryColor px-4 py-2 text-center w-36"
+          className="text-primaryColor uppercase font-semibold border border-primaryColor px-4 py-2 text-center w-36 hover:bg-primaryColor hover:text-white transition-colors"
           href="/"
         >
           View details

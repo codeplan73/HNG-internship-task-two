@@ -16,7 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <Link
       href={`/products/${product.id}`}
-      className="flex flex-col gap-2 items-start cursor-pointer max-w-md"
+      className="flex flex-col gap-2 items-start cursor-pointer w-full hover:drop-shadow-2xl transition-all duration-300 ease-in-out"
     >
       <Image
         src={product.image}

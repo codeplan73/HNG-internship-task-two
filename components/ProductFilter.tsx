@@ -52,9 +52,9 @@ const ProductFilter = () => {
           <h4 className="text-md font-semibold nowrap">Shop By Room</h4>
 
           {rooms.map((room, roomIndex) => (
-            <div key={room.id} className="flex flex-col gap-2">
+            <div key={room.id} className="flex flex-col gap-2 ">
               <span
-                className={`cursor-pointer ${
+                className={`cursor-pointer hover:text-primaryColor ${
                   roomIndex === 0 ? "text-red-500" : ""
                 }`}
               >
@@ -62,7 +62,10 @@ const ProductFilter = () => {
               </span>
               {room.items &&
                 room.items.map((item) => (
-                  <span key={item.id} className={`cursor-pointer pl-4`}>
+                  <span
+                    key={item.id}
+                    className={`cursor-pointer hover:text-primaryColor pl-4`}
+                  >
                     {item.name}
                   </span>
                 ))}
@@ -75,7 +78,9 @@ const ProductFilter = () => {
           <div>
             {concept.map((c) => (
               <div key={c.id} className="flex items-center gap-2">
-                <span className="cursor-pointer">{c.name}</span>
+                <span className="cursor-pointer hover:text-primaryColor">
+                  {c.name}
+                </span>
               </div>
             ))}
           </div>
@@ -85,7 +90,10 @@ const ProductFilter = () => {
           <h4 className="text-md font-semibold nowrap">Price</h4>
           <div>
             {price.map((p) => (
-              <div key={p.id} className="flex items-center gap-2">
+              <div
+                key={p.id}
+                className="flex items-center gap-2 hover:text-primaryColor"
+              >
                 <input type="checkbox" />
                 <span>
                   {p.low} - {p.high}

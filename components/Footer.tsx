@@ -34,10 +34,10 @@ const Footer = () => {
             <span>contact@tinbuexpress.com</span>
           </p>
           <div className="flex items-center justify-start gap-8 mt-6">
-            <FaFacebookF className="" />
-            <FaTwitter className="" />
-            <FaInstagram className="" />
-            <TfiYoutube className="" />
+            <FaFacebookF className="hover:text-primaryColor" />
+            <FaTwitter className="hover:text-primaryColor" />
+            <FaInstagram className="hover:text-primaryColor" />
+            <TfiYoutube className="hover:text-primaryColor" />
           </div>
         </div>
 
@@ -50,7 +50,7 @@ const Footer = () => {
               {shoppingMenuItems.map((link) => (
                 <li key={link.label}>
                   <Link
-                    className="text-xs font-thin text-frenchGray"
+                    className="text-xs font-thin text-frenchGray hover:text-primaryColor"
                     href={link.href}
                   >
                     {link.label}
@@ -67,7 +67,7 @@ const Footer = () => {
               {moreLinks.map((link) => (
                 <li key={link.label}>
                   <Link
-                    className="text-xs font-thin text-frenchGray"
+                    className="text-xs font-thin text-frenchGray hover:text-primaryColor"
                     href={link.href}
                   >
                     {link.label}

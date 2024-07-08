@@ -43,7 +43,8 @@ const Navbar = () => {
                 className={classnames({
                   "uppercase text-md  hover:text-primaryColor text-primaryColor":
                     link.href === currentPath,
-                  "text-neutral uppercase  text-md": link.href !== currentPath,
+                  "text-neutral uppercase  text-md hover:text-primaryColor transition-colors":
+                    link.href !== currentPath,
                   "transition-colors": true,
                 })}
               >

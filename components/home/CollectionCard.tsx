@@ -19,7 +19,7 @@ const CollectionCard: React.FC<CollectionCardProps> = ({ product }) => {
         alt={product.name}
         height={100}
         width={100}
-        className="max-w-md w-full h-80 rounded-2xl shadow"
+        className="w-[182px] md:w-[210px] h-[200px] md:h-[250px] rounded-2xl shadow"
       />
       <p className="text-sm font-semibold">{product.name}</p>
     </Link>
