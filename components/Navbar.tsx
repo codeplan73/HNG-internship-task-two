@@ -8,8 +8,8 @@ import { RiShoppingCart2Line } from "react-icons/ri";
 import { FiSearch } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import classnames from "classnames";
-
 import { menuItems } from "@/data/link";
+import { useCart } from "@/provider/cartProvider";
 
 const iconMenu = [
   {
@@ -29,6 +29,8 @@ const iconMenu = [
 const Navbar = () => {
   const [open, setIsOpen] = useState(false);
   const currentPath = usePathname();
+  const { totalItem } = useCart();
+
   return (
     <nav className="w-full py-6 md:py-6 shadow drop-shadow z-50 relative">
       <div className=" container flex items-center justify-between ">
@@ -57,7 +59,7 @@ const Navbar = () => {
           <Link href="/cart" className="flex relative">
             <RiShoppingCart2Line className="text-xl text-neutral cursor-pointer hover:text-primaryColor" />
             <span className="text-primaryColor absolute bg-white rounded-full text-xs -top-2 left-2 px-1">
-              5
+              {totalItem}
             </span>
           </Link>
         </ul>
@@ -66,7 +68,7 @@ const Navbar = () => {
           <Link href="/cart" className="flex relative">
             <RiShoppingCart2Line className="text-xl text-neutral cursor-pointer hover:text-primaryColor" />
             <span className="text-primaryColor absolute bg-white rounded-full text-xs -top-2 left-2 px-1">
-              5
+              {totalItem}
             </span>
           </Link>
           <RiMenu5Fill
@@ -103,7 +105,7 @@ const Navbar = () => {
           <Link href="/cart" className="flex" onClick={() => setIsOpen(false)}>
             <RiShoppingCart2Line className="text-xl text-neutral cursor-pointer hover:text-primaryColor" />
             <span className="text-primaryColor bg-white rounded-full text-sm">
-              5
+              {totalItem}
             </span>
           </Link>
         </ul>

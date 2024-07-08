@@ -11,13 +11,20 @@ import Link from "next/link";
 import { products } from "@/data/products";
 import { IoIosArrowForward } from "react-icons/io";
 import { BsDot, BsHeart } from "react-icons/bs";
+import { useCart } from "@/provider/cartProvider";
+import { useRouter } from "next/navigation";
 
 interface Props {
   params: { id: string };
 }
 
 const ProductDetailPage = ({ params }: Props) => {
-  const [selectedColor, setSelectedColor] = useState<null | string>(null);
+  const [selectedColor, setSelectedColor] = useState<string>("");
+  const [quantity, setQuantity] = useState<number>(1);
+  const { addItem } = useCart();
+
+  const router = useRouter();
+
   const product = products.find(
     (product) => product.id === parseInt(params.id)
   );
@@ -25,6 +32,10 @@ const ProductDetailPage = ({ params }: Props) => {
   if (!product) {
     return <div>Product not found</div>;
   }
+
+  const increaseQuantity = () => setQuantity((prev) => prev + 1);
+  const decreaseQuantity = () =>
+    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
   const price = new Intl.NumberFormat("en-us", {
     style: "currency",
@@ -94,11 +105,26 @@ const ProductDetailPage = ({ params }: Props) => {
 
         <div className="flex items-center justify-between space-x-4">
           <div className="flex items-center gap-4 border border-coolGray p-2 px-4">
-            <button className="text-xl">-</button>
-            <p className="">1</p>
-            <button className="text-xl">+</button>
+            <button onClick={decreaseQuantity} className="text-xl">
+              -
+            </button>
+            <p className="">{quantity}</p>
+            <button onClick={increaseQuantity} className="text-xl">
+              +
+            </button>
           </div>
-          <button className="bg-primaryColor px-4 py-3 rounded text-white text-md">
+          <button
+            onClick={() => {
+              addItem({
+                ...product,
+                quantity: quantity,
+                color: selectedColor,
+                product_id: product.id,
+              });
+              router.push("/cart");
+            }}
+            className="bg-primaryColor px-4 py-3 rounded text-white text-md"
+          >
             Add to cart
           </button>
         </div>
