@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="flex flex-col text-white gap-2 w-full md:w-4/12">
           <Logo />
           <p className="text-coolGray text-sm font-light my-4">
-            This is your best spot for aestjetic vintage furniture of all time
+            This is your best spot for aesthetics vintage furniture of all time
           </p>
           <p className="text-sm flex space-x-2 items-center">
             <FaMapMarked className="" />
