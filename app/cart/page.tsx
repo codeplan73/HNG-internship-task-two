@@ -4,6 +4,7 @@ import React from "react";
 import { useCart } from "@/provider/cartProvider";
 import Image from "next/image";
 import OrderSummary from "@/components/OrderSummary";
+import { GiShoppingCart } from "react-icons/gi";
 
 const CartPage = () => {
   const {
@@ -13,6 +14,16 @@ const CartPage = () => {
     decreaseItemQuantity,
     removeItem,
   } = useCart();
+
+  if (items.length === 0)
+    return (
+      <div className="flex flex-col gap-4 items-center justify-center py-20">
+        <GiShoppingCart className="text-7xl text-primaryColor " />
+        <p className="text-2xl md:text-4xl text-primaryColor">
+          Your cart is empty
+        </p>
+      </div>
+    );
 
   return (
     <div className="flex flex-col md:flex-row items-start gap-6 py-6 md:px-12 md:py-12 w-full container">
@@ -86,9 +97,17 @@ const CartPage = () => {
             );
           })}
         </div>
+
+        <p className="bg-green-50 p-2 rounded-sm border border-primaryColor">
+          <span className="text-primaryColor text-lg px-2">%</span>
+          <span className="text-sm">
+            10% Instant Discount with Federal Bank Debit Card on a main Spend of
+            $150. TCA
+          </span>
+        </p>
       </div>
 
-      <OrderSummary />
+      <OrderSummary text="Proceed to Checkout" link="/address" />
     </div>
   );
 };

@@ -1,17 +1,22 @@
+"use client";
+
 import React from "react";
+import { useRouter } from "next/navigation";
 
 interface ButtonProps {
   text: string;
-  className: string;
+  link: string;
 }
 
-const Button = ({ text, className }: ButtonProps) => {
+const Button = ({ text, link }: ButtonProps) => {
+  const router = useRouter();
   return (
-    <div
-      className={`bg-primaryColor px-4 py-2 rounded-md  text-center ${className} `}
+    <button
+      onClick={() => router.push(link)}
+      className="w-full text-white py-3 rounded-sm text-sm bg-primaryColor"
     >
       {text}
-    </div>
+    </button>
   );
 };
 

@@ -13,9 +13,9 @@ const poppins = Poppins({
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Timbu Express App",
+  title: "Timbu Cloud Shop",
   description:
-    "Timbu Express is an ecommerce app for a shopping experience, this is HNG-Internship stage 2 task",
+    "Timbu Cloud Shop is an ecommerce app for a shopping experience, this is HNG-Internship stage 2 task",
 };
 
 export default function RootLayout({

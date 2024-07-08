@@ -1,13 +1,18 @@
+"use client";
+
 import React from "react";
 import { useCart } from "@/provider/cartProvider";
 import { HiOutlineTag } from "react-icons/hi";
 import formatCurrency from "@/lib/currencyFormatter";
-import { useRouter } from "next/navigation";
+import Button from "./Button";
 
-const OrderSummary = () => {
+interface ButtonProps {
+  text: string;
+  link: string;
+}
+
+const OrderSummary = ({ text, link }: ButtonProps) => {
   const { total, coupon, discount, totalPrice } = useCart();
-  const router = useRouter();
-
   const formattedTotal = formatCurrency(total);
   const formattedDiscount = formatCurrency(discount);
   const formattedTotalPrice = formatCurrency(totalPrice);
@@ -56,12 +61,7 @@ const OrderSummary = () => {
           <HiOutlineTag className="absolute top-3 right-3 text-lg" />
         </div>
 
-        <button
-          onClick={() => router.push("/address")}
-          className="w-full text-white py-3 rounded-sm text-sm bg-primaryColor"
-        >
-          Proceed to Checkout
-        </button>
+        <Button text={text} link={link} />
       </div>
     </div>
   );
