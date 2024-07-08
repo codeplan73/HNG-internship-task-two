@@ -28,7 +28,7 @@ const Hero = () => {
         <Button
           link="/"
           className="w-32 cursor-pointer text-white"
-          text="Add to cart"
+          text="Get Started"
         />
       </div>
     </div>
