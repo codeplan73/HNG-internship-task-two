@@ -2,6 +2,7 @@ import OrderSummary from "@/components/OrderSummary";
 import Image from "next/image";
 import { GoDotFill } from "react-icons/go";
 import { FiPlus } from "react-icons/fi";
+import { IoIosArrowForward } from "react-icons/io";
 
 const paymentMethod = [
   { id: 1, imgSrc: "/visa.png", card: "5643", expire: "Expires 11/2025" },
@@ -12,6 +13,13 @@ const Payment = () => {
   return (
     <div className="flex flex-col md:flex-col lg:flex-row items-start gap-6 py-6 md:px-12 md:py-12 w-full container">
       <div className="flex flex-col gap-8 items-start w-full  lg:w-8/12 lg:px-12">
+        <div className="flex items-center gap-4 md:gap-12 w-full mb-8">
+          <p className="text-lg font-semibold text-coolGray">Adress</p>
+          <IoIosArrowForward className="text-coolGray text-lg" />
+          <p className="text-lg font-semibold text-coolGray">Shipping</p>
+          <IoIosArrowForward className="text-coolGray text-lg" />
+          <p className="text-lg font-semibold ">Payment</p>
+        </div>
         <h4 className="text-lg font-semibold">Payment Method</h4>
         <div className="border border-frenchGray flex flex-col w-full">
           {paymentMethod.map((item) => (
@@ -26,7 +34,7 @@ const Payment = () => {
                   alt="card"
                   width={50}
                   height={50}
-                  className="h-10 w-10"
+                  className="h-6 md:h-10 w-6 md:w-10"
                 />
                 <p className="font-semibold text-xs md:text-sm flex items-center -space-x-1 justify-start">
                   <GoDotFill />

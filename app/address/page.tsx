@@ -4,8 +4,8 @@ import { FiPlus } from "react-icons/fi";
 
 const Shipping = () => {
   return (
-    <div className="flex flex-col md:flex-row items-start gap-12 py-6 md:px-12 md:py-12 w-full container">
-      <div className="flex flex-col gap-12 items-start w-full md:w-8/12 md:px-12">
+    <div className="flex flex-col md:flex-col lg:flex-row items-start gap-12 py-6 md:px-12 md:py-12 w-full container">
+      <div className="flex flex-col gap-12 items-start w-full md:w-full lg:w-8/12 lg:px-12">
         <div className="flex items-center gap-4 md:gap-12 w-full">
           <p className="text-lg font-semibold">Adress</p>
           <IoIosArrowForward className="text-coolGray text-lg" />

@@ -33,7 +33,7 @@ const Footer = () => {
             <IoMdMailUnread className="" />{" "}
             <span>contact@tinbuexpress.com</span>
           </p>
-          <div className="flex items-center justify-between mt-6">
+          <div className="flex items-center justify-start gap-8 mt-6">
             <FaFacebookF className="" />
             <FaTwitter className="" />
             <FaInstagram className="" />
