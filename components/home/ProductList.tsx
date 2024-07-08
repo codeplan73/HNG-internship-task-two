@@ -1,6 +1,7 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 import { products } from "@/data/products";
+import ProductFilter from "../ProductFilter";
 
 const ProductList = () => {
   return (
@@ -8,17 +9,9 @@ const ProductList = () => {
       <div className="flex flex-col items-center">
         <h2 className="text-xl md:text-2xl font-bold">Our Products</h2>
       </div>
-      <div className="flex gap-8 items-start">
-        <div className="hidden md:w-3/12 md:flex flex-col col-span-1">
-          <h3>Arch Duke Flur</h3>
-          <p>
-            The Arch Duke Flur is an exquisite blend of luxury and
-            sophistication, designed for the discerning individual who values
-            elegance and timeless style in their collection.
-          </p>
-          <p>$10.0</p>
-        </div>
-        <div className="w-full md:w-9/12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 w-full md:px-16 lg:px-24">
+        <ProductFilter />
+        <div className="col-span-3 w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
