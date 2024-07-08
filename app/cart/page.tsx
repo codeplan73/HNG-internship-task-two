@@ -6,11 +6,17 @@ import Image from "next/image";
 import OrderSummary from "@/components/OrderSummary";
 
 const CartPage = () => {
-  const { items, totalItem, reduceFromCart, removeItem } = useCart();
+  const {
+    items,
+    totalItem,
+    increaseItemQuantity,
+    decreaseItemQuantity,
+    removeItem,
+  } = useCart();
 
   return (
-    <div className="flex items-start gap-6 py-6 md:px-12 md:py-12 w-full container">
-      <div className="flex flex-col gap-6 items-start w-full md:w-8/12 px-12">
+    <div className="flex flex-col md:flex-row items-start gap-6 py-6 md:px-12 md:py-12 w-full container">
+      <div className="flex flex-col gap-6 items-start w-full md:w-8/12 md:px-12">
         <p className="flex items-end space-x-2">
           <span className="text-xl font-bold">Cart</span>
           <span className="text-sm text-coolGray font-bold uppercase">
@@ -27,7 +33,7 @@ const CartPage = () => {
             return (
               <div
                 key={index}
-                className="flex items-start justify-between space-x-4 w-full  border-b-2 pb-6"
+                className="flex items-start justify-start gap-4 md:justify-between w-full  border-b-2 pb-6"
               >
                 <div className="flex items-start space-x-8">
                   <Image
@@ -46,13 +52,27 @@ const CartPage = () => {
                       </p>
                       <div className="flex items-center gap-6">
                         <div className="flex items-center gap-6 border border-coolGray p-2 px-4">
-                          <button className="text-xl">-</button>
+                          <button
+                            onClick={() =>
+                              decreaseItemQuantity(item.id.toString())
+                            }
+                            className="text-xl"
+                          >
+                            -
+                          </button>
                           <p className="">{item.quantity}</p>
-                          <button className="text-xl">+</button>
+                          <button
+                            onClick={() =>
+                              increaseItemQuantity(item.id.toString())
+                            }
+                            className="text-xl"
+                          >
+                            +
+                          </button>
                         </div>
 
                         <button
-                          onClick={() => {}}
+                          onClick={() => removeItem(item.id.toString())}
                           className="text-secondaryRed"
                         >
                           Remove

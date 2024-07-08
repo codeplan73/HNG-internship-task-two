@@ -2,9 +2,11 @@ import React from "react";
 import { useCart } from "@/provider/cartProvider";
 import { HiOutlineTag } from "react-icons/hi";
 import formatCurrency from "@/lib/currencyFormatter";
+import { useRouter } from "next/navigation";
 
 const OrderSummary = () => {
   const { total, coupon, discount, totalPrice } = useCart();
+  const router = useRouter();
 
   const formattedTotal = formatCurrency(total);
   const formattedDiscount = formatCurrency(discount);
@@ -55,7 +57,7 @@ const OrderSummary = () => {
         </div>
 
         <button
-          onClick={() => {}}
+          onClick={() => router.push("/address")}
           className="w-full text-white py-3 rounded-sm text-sm bg-primaryColor"
         >
           Proceed to Checkout
