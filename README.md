@@ -11,9 +11,7 @@ Welcome to the Timbu-Express E-commerce App repository. This project is an e-com
 
 ## Built With
 
-- [Node.js](https://nodejs.org/en/) - JavaScript runtime for the backend
 - [Nextjs](https://nextjs.org/) - Frontend framework for building fullstack application
-- [Zustand](https://zustand.js.org/) - State management library
 - [Tailwindcss](https://tailwindcss.com/) - Frontend framework for responsive design
 - [Shandcn](https://ui.shadcn.com/) - Frontend framework for responsive design
 
@@ -24,14 +22,13 @@ To get a local copy up and running, follow these simple steps.
 ### Prerequisites
 
 - Node.js
-- MongoDB
 
 ### Installation
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your_username_/timbu-express.git
+git clone https://github.com/codeplan73/HNG-internship-task-two
 ```
 
 2. Navigate to the project directory:
@@ -70,6 +67,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [@codecps](https://twitter.com/codecps) - omonzebaguan.grn@gmail.com
+[@codecps](https://twitter.com/codecps) - omonzebaguan.grn@gmail.com
 
 Project Link: [https://github.com/codeplan73/HNG-internship-task-two.gits](https://github.com/codeplan73/HNG-internship-task-two.git)
