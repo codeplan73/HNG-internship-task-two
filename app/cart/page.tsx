@@ -26,8 +26,8 @@ const CartPage = () => {
     );
 
   return (
-    <div className="flex flex-col md:flex-col lg:flex-row items-start gap-6 py-6 md:px-12 md:py-12 w-full container">
-      <div className="flex flex-col gap-6 items-start w-full md:min-w-full lg:w-8/12 lg:px-12">
+    <div className="flex flex-col md:flex-row items-start gap-6 py-6 md:px-12 md:py-12 w-full container">
+      <div className="flex flex-col gap-6 items-start w-full md:w-full lg:w-8/12 lg:px-12">
         <p className="flex items-end space-x-2">
           <span className="text-xl font-bold">Cart</span>
           <span className="text-sm text-coolGray font-bold uppercase">
@@ -44,7 +44,7 @@ const CartPage = () => {
             return (
               <div
                 key={index}
-                className="flex items-start justify-start gap-4 md:justify-between w-full  border-b-2 pb-6"
+                className="flex items-start justify-start gap-8 md:justify-between w-full  border-b-2 pb-6"
               >
                 <div className="flex items-start space-x-8">
                   <Image
@@ -56,12 +56,12 @@ const CartPage = () => {
                   />
                   <div className="">
                     <div className="flex flex-col gap-2">
-                      <p className="font-semibold">{item.name}</p>
+                      <p className="font-semibold text-wrap">{item.name}</p>
                       <p className="flex items-start space-x-2">
                         <span>Color</span>
                         <span className="font-semibold">{item.color}</span>
                       </p>
-                      <div className="flex items-center gap-6 w-full">
+                      <div className="flex items-center gap-6">
                         <div className="flex items-center gap-6 border border-coolGray p-2 px-4">
                           <button
                             onClick={() =>
