@@ -20,8 +20,8 @@ const shipment = [
 
 const Shipping = () => {
   return (
-    <div className="flex flex-col md:flex-row items-start gap-6 py-6 md:px-12 md:py-12 w-full container">
-      <div className="flex flex-col gap-2 items-start w-full md:w-8/12 md:px-12">
+    <div className="flex flex-col md:flex-col lg:flex-row items-start gap-6 py-6 md:px-12 md:py-12 w-full container">
+      <div className="flex flex-col gap-2 items-start w-full  lg:w-8/12 lg:px-12">
         <h4 className="text-lg font-semibold">Shipment Method</h4>
         <div className="border border-frenchGray flex flex-col w-full">
           {shipment.map((item) => (
@@ -31,10 +31,10 @@ const Shipping = () => {
             >
               <div className="flex items-center gap-4 md:gap-8">
                 <input type="radio" name="shipment" id="" />
-                <p className="font-semibold text-xs md:text-md">{item.fee}</p>
-                <p className="text-xs md:text-md">{item.type}</p>
+                <p className="font-semibold text-xs md:text-lg">{item.fee}</p>
+                <p className="text-xs md:text-lg">{item.type}</p>
               </div>
-              <p className="font-semibold text-xs md:text-md">{item.date}</p>
+              <p className="font-semibold text-xs md:text-lg">{item.date}</p>
             </div>
           ))}
         </div>

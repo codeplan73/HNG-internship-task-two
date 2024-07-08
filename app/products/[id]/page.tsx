@@ -61,8 +61,8 @@ const ProductDetailPage = ({ params }: Props) => {
   };
 
   return (
-    <div className="flex flex-col-reverse md:flex-row container ">
-      <div className="w-full md:w-4/12 p-10 flex flex-col gap-6 items-start">
+    <div className="flex flex-col gap-6  py-6 container ">
+      <div className="flex flex-col space-y-6 md:pl-6 lg:p-10">
         <Link href="/" className="text-coolGray">
           <MdOutlineKeyboardBackspace />
         </Link>
@@ -71,85 +71,90 @@ const ProductDetailPage = ({ params }: Props) => {
           <IoIosArrowForward />
           <span>{product.name}</span>
         </div>
-        <div className="flex flex-col gap-6">
-          <h1 className="text-xl md:text-4xl font-bold">{product.name}</h1>
-          <div className="flex items-center justify-between">
-            <p className="text-md md:text-xl font-semibold">{price}</p>
-            <p className="text-coolGray flex items-center">
-              {renderStars()}
-              {product.rating}/5.0 ({product.totalRating})
-            </p>
-          </div>
-          <p className="text-sm text-gray ">{product.description}</p>
-          <div className="flex items-center gap-2">
-            <div className="flex gap-2">
-              {product.color.map((color) => (
-                <div
-                  key={color}
-                  style={{ backgroundColor: color }}
-                  onClick={() => {
-                    setSelectedColor(color);
-                    console.log(color);
-                  }}
-                  className={`w-4 h-4 rounded-full cursor-pointer ${
-                    selectedColor === color
-                      ? "border-2 border-darkGray"
-                      : "border border-transparent"
-                  }`}
-                  title={color}
-                ></div>
-              ))}
+      </div>
+      <div className="flex flex-col-reverse md:flex-row lg:flex-row items-start">
+        <div className="w-full md:w-6/12 lg:w-4/12 lg:pl-10 md:pl-6 md:px-4 flex flex-col gap-6 items-start">
+          <div className="flex flex-col gap-6">
+            <h1 className="text-xl md:text-4xl font-bold">{product.name}</h1>
+            <div className="flex items-center justify-between">
+              <p className="text-md md:text-xl font-semibold">{price}</p>
+              <p className="text-coolGray flex items-center">
+                {renderStars()}
+                {product.rating}/5.0 ({product.totalRating})
+              </p>
+            </div>
+            <p className="text-sm text-gray ">{product.description}</p>
+            <div className="flex items-center gap-2">
+              <div className="flex gap-2">
+                {product.color.map((color) => (
+                  <div
+                    key={color}
+                    style={{ backgroundColor: color }}
+                    onClick={() => {
+                      setSelectedColor(color);
+                      console.log(color);
+                    }}
+                    className={`w-4 h-4 rounded-full cursor-pointer ${
+                      selectedColor === color
+                        ? "border-2 border-darkGray"
+                        : "border border-transparent"
+                    }`}
+                    title={color}
+                  ></div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="flex items-center justify-between space-x-4">
-          <div className="flex items-center gap-4 border border-coolGray p-2 px-4">
-            <button onClick={decreaseQuantity} className="text-xl">
-              -
-            </button>
-            <p className="">{quantity}</p>
-            <button onClick={increaseQuantity} className="text-xl">
-              +
+          <div className="flex items-center justify-between space-x-4">
+            <div className="flex items-center gap-4 border border-coolGray p-2 px-4">
+              <button onClick={decreaseQuantity} className="text-xl">
+                -
+              </button>
+              <p className="">{quantity}</p>
+              <button onClick={increaseQuantity} className="text-xl">
+                +
+              </button>
+            </div>
+            <button
+              onClick={() => {
+                addItem({
+                  ...product,
+                  quantity: quantity,
+                  color: selectedColor,
+                  product_id: product.id,
+                });
+                router.push("/cart");
+              }}
+              className="bg-primaryColor px-4 py-3 rounded text-white text-md"
+            >
+              Add to cart
             </button>
           </div>
-          <button
-            onClick={() => {
-              addItem({
-                ...product,
-                quantity: quantity,
-                color: selectedColor,
-                product_id: product.id,
-              });
-              router.push("/cart");
-            }}
-            className="bg-primaryColor px-4 py-3 rounded text-white text-md"
-          >
-            Add to cart
+
+          <div className="flex items-center">
+            <p className="text-xs">Free 3-5 day shipping</p>
+            <BsDot />
+            <p className="text-xs">Tool-free assembly</p>
+            <BsDot />
+            <p className="text-xs">30-day trial </p>
+          </div>
+
+          <button className="flex items-center space-x-1 text-xs text-primaryColor">
+            <BsHeart />
+            <span>Add to wishlist</span>
           </button>
         </div>
 
-        <div className="flex items-center">
-          <p className="text-xs">Free 3-5 day shipping</p>
-          <BsDot />
-          <p className="text-xs">Tool-free assembly</p>
-          <BsDot />
-          <p className="text-xs">30-day trial </p>
+        <div className="w-full md:w-6/12 lg:w-8/12 py-10 mx-auto md:-mt-10 lg:px-20 flex items-center justify-center">
+          <Image
+            src={product.image}
+            alt={product.name}
+            width={1000}
+            height={1000}
+            className=" lg:h-96 lg:w-96 object-cover"
+          />
         </div>
-
-        <button className="flex items-center space-x-1 text-xs text-primaryColor">
-          <BsHeart />
-          <span>Add to wishlist</span>
-        </button>
-      </div>
-      <div className="w-full md:w-8/12 py-10 mx-auto md:px-20 flex items-center justify-center">
-        <Image
-          src={product.image}
-          alt={product.name}
-          width={1000}
-          height={1000}
-          className=" md:h-96 md:w-96 object-cover"
-        />
       </div>
     </div>
   );

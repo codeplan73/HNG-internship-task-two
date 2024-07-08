@@ -19,7 +19,7 @@ const OrderSummary = ({ text, link }: ButtonProps) => {
   const formattedCoupon = formatCurrency(coupon);
 
   return (
-    <div className="w-full md:w-3/12 py-6 px-6 border border-coolGray rounded-sm flex flex-col items-start gap-6">
+    <div className="w-full md:w-full lg:w-3/12 py-6 px-6 border border-coolGray rounded-sm flex flex-col items-start gap-6">
       <h4 className="text-xl font-semibold">Order Summary</h4>
       <div className="flex flex-col w-full gap-4">
         <p className="flex items-center justify-between text-sm font-thin text-slate-600">
