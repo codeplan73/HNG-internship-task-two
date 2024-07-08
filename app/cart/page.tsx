@@ -3,12 +3,13 @@
 import React from "react";
 import { useCart } from "@/provider/cartProvider";
 import Image from "next/image";
+import OrderSummary from "@/components/OrderSummary";
 
 const CartPage = () => {
   const { items, totalItem, reduceFromCart, removeItem } = useCart();
 
   return (
-    <div className="flex items-center space-x-5 py-6 md:py-12 w-full">
+    <div className="flex items-start gap-6 py-6 md:px-12 md:py-12 w-full container">
       <div className="flex flex-col gap-6 items-start w-full md:w-8/12 px-12">
         <p className="flex items-end space-x-2">
           <span className="text-xl font-bold">Cart</span>
@@ -66,6 +67,8 @@ const CartPage = () => {
           })}
         </div>
       </div>
+
+      <OrderSummary />
     </div>
   );
 };
