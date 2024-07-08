@@ -25,7 +25,11 @@ const Hero = () => {
             Cheaper than you ever expect
           </p>
         </div>
-        <Button className="w-32 cursor-pointer text-white" text="Add to cart" />
+        <Button
+          link="/"
+          className="w-32 cursor-pointer text-white"
+          text="Add to cart"
+        />
       </div>
     </div>
   );
