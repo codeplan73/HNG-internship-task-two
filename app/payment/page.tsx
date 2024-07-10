@@ -3,6 +3,7 @@ import Image from "next/image";
 import { GoDotFill } from "react-icons/go";
 import { FiPlus } from "react-icons/fi";
 import { IoIosArrowForward } from "react-icons/io";
+import Swal from "sweetalert2";
 
 const paymentMethod = [
   { id: 1, imgSrc: "/visa.png", card: "5643", expire: "Expires 11/2025" },
@@ -10,6 +11,7 @@ const paymentMethod = [
 ];
 
 const Payment = () => {
+  const Swal = require("sweetalert2");
   return (
     <div className="flex flex-col md:flex-col lg:flex-row items-start gap-6 py-6 md:px-12 md:py-12 w-full container">
       <div className="flex flex-col gap-8 items-start w-full  lg:w-8/12 lg:px-12">

@@ -7,7 +7,7 @@ const Collection = () => {
   return (
     <div className="container flex flex-col gap-10 py-10 items-center w-full">
       <div className="flex flex-col items-center">
-        <h2 className="text-xl md:text-2xl font-bold">
+        <h2 className="text-xl md:text-2xl font-bold text-center">
           Browse Our Popular Collection
         </h2>
         <p className="text-neutral text-sm text-center">
