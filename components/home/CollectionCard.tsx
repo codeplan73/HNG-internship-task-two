@@ -9,8 +9,7 @@ interface CollectionCardProps {
 
 const CollectionCard: React.FC<CollectionCardProps> = ({ product }) => {
   return (
-    <Link
-      href={`/products/${product.id}`}
+    <div
       key={product.id}
       className="flex flex-col items-center flex-shrink-0 max-w-md gap-4 py-4 transition-all duration-300 ease-in-out cursor-pointer hover:drop-shadow-2xl"
     >
@@ -22,7 +21,7 @@ const CollectionCard: React.FC<CollectionCardProps> = ({ product }) => {
         className="w-[182px] md:w-[210px] h-[200px] md:h-[250px] rounded-2xl shadow"
       />
       <p className="text-sm font-semibold">{product.name}</p>
-    </Link>
+    </div>
   );
 };
 
