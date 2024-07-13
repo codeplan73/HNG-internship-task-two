@@ -1,6 +1,5 @@
 import React from "react";
 import { productCollection } from "@/data/products";
-import Image from "next/image";
 import CollectionCard from "./CollectionCard";
 
 const Collection = () => {
