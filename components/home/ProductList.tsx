@@ -6,6 +6,7 @@ import ProductFilter from "../ProductFilter";
 import axios from "axios";
 import { ProductItem } from "@/types";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { Circles } from "react-loader-spinner";
 
 const ProductList = () => {
   const [loading, setLoading] = useState(false);
@@ -34,7 +35,13 @@ const ProductList = () => {
     setCurrentPage((prevPage) => (prevPage > 1 ? prevPage - 1 : 1));
 
   if (loading) {
-    return <div className="p-4 text-4xl bg-red-700 rounded">Loading...</div>;
+    return (
+      <div className="container w-full flex items-center justify-center p-4 mx-auto text-4xl rounded lg:max-w-7xl h-[50vh]">
+        <div className="preloader">
+          <Circles color="#00BFFF" height={80} width={80} />
+        </div>
+      </div>
+    );
   }
 
   return (

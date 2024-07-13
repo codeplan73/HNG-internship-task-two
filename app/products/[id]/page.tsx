@@ -14,6 +14,7 @@ import { useCart } from "@/provider/cartProvider";
 import { useRouter } from "next/navigation";
 import { Product } from "@/types";
 import axios from "axios";
+import { Circles } from "react-loader-spinner";
 
 interface Props {
   params: { id: string };
@@ -45,7 +46,13 @@ const ProductDetailPage = ({ params }: Props) => {
   }, [params.id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="container w-full flex items-center justify-center p-4 mx-auto text-4xl rounded lg:max-w-7xl h-[50vh]">
+        <div className="preloader">
+          <Circles color="#00BFFF" height={80} width={80} />
+        </div>
+      </div>
+    );
   }
 
   if (!product) {
