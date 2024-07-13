@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-// import { products } from "@/data/products";
 import ProductFilter from "../ProductFilter";
 import axios from "axios";
 import { ProductItem } from "@/types";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 const ProductList = () => {
   const [loading, setLoading] = useState(false);
@@ -39,28 +39,41 @@ const ProductList = () => {
 
   return (
     <div className="container flex flex-col items-center w-full gap-10 py-10">
-      <div className="flex flex-col items-center">
-        <h2 className="text-xl font-bold md:text-2 xl">Our Products</h2>
-      </div>
       <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-4 md:px-16 lg:px-24">
         <ProductFilter />
-        <div className="grid w-full grid-cols-1 col-span-3 gap-8 md:grid-cols-3 lg:grid-cols-3">
-          {products?.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      </div>
+        <div className="flex flex-col w-full col-span-3 gap-6">
+          <div className="flex flex-col items-center">
+            <h2 className="text-xl font-bold text-center md:text-2">
+              Our Products
+            </h2>
+          </div>
+          <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3">
+            {products?.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
 
-      <div className="flex items-center justify-center gap-4">
-        <button onClick={prevPage} className="px-4 py-2 bg-gray-300 rounded">
-          Prev
-        </button>
-        <div>
-          <span>Page</span> {currentPage}
+          <div className="flex items-center justify-between w-full p-4 rounded-md bg-slate-50">
+            <button
+              onClick={prevPage}
+              disabled={currentPage === 1}
+              className="flex items-center gap-2 px-4 py-2 bg-gray-300 rounded-md shadow-md bg-frenchGray"
+            >
+              <FaChevronLeft className="" />
+              <span> Prev</span>
+            </button>
+            <div className="flex items-center gap-2">
+              <span className="text-slate-400">Page</span> {currentPage}
+            </div>
+            <button
+              onClick={nextPage}
+              className="flex items-center gap-2 px-4 py-2 bg-gray-300 rounded-md shadow-md bg-frenchGray"
+            >
+              <span> Next</span>
+              <FaChevronRight className="" />
+            </button>
+          </div>
         </div>
-        <button onClick={nextPage} className="px-4 py-2 bg-gray-300 rounded">
-          Next
-        </button>
       </div>
     </div>
   );
