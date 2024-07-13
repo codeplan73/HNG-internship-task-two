@@ -101,10 +101,5 @@ export interface Product {
 export interface Collection {
   id: number;
   name: string;
-  description: string;
-  price: number;
-  rating: number;
-  totalRating: number;
-  color?: string[];
   image: string;
 }
