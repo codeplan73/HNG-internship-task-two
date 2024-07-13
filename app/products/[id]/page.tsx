@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 import { Product } from "@/types";
 import axios from "axios";
 import { Circles } from "react-loader-spinner";
+import { toast } from "react-toastify";
 
 interface Props {
   params: { id: string };
@@ -152,6 +153,7 @@ const ProductDetailPage = ({ params }: Props) => {
                   price: product.current_price,
                   image: `https://api.timbu.cloud/images/${product.photos[0].url}`,
                 });
+                toast.success("Item added to cart");
                 router.push("/cart");
               }}
               className="px-4 py-3 text-white rounded bg-primaryColor text-md"

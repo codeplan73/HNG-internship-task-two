@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CartProvider from "@/provider/cartProvider";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,6 +31,7 @@ export default function RootLayout({
         <CartProvider>
           <Navbar />
           <main className="w-full">{children}</main>
+          <ToastContainer />
           <Footer />
         </CartProvider>
       </body>

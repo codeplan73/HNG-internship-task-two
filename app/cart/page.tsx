@@ -5,6 +5,7 @@ import { useCart } from "@/provider/cartProvider";
 import Image from "next/image";
 import OrderSummary from "@/components/OrderSummary";
 import { GiShoppingCart } from "react-icons/gi";
+import { toast } from "react-toastify";
 
 const CartPage = () => {
   const {
@@ -83,7 +84,10 @@ const CartPage = () => {
                         </div>
 
                         <button
-                          onClick={() => removeItem(item.id.toString())}
+                          onClick={() => {
+                            removeItem(item.id.toString());
+                            toast.warning("Item removed from cart");
+                          }}
                           className="text-secondaryRed"
                         >
                           Remove

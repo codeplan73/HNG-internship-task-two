@@ -42,6 +42,7 @@ const CartProvider = ({ children }: PropsWithChildren<any>) => {
       if (existingItemIndex > -1) {
         const updatedItems = [...prevItems];
         updatedItems[existingItemIndex].quantity += newItem.quantity;
+
         return updatedItems;
       } else {
         return [...prevItems, newItem];
