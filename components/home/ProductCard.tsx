@@ -19,7 +19,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       className="flex flex-col items-start w-full gap-2 transition-all duration-300 ease-in-out cursor-pointer hover:drop-shadow-2xl"
     >
       <Image
-        src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
+        src={`https://api.timbu.cloud/images/${product?.photos[0]?.url}`}
         alt={product.name}
         width={1000}
         height={1000}

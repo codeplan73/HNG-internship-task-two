@@ -165,6 +165,21 @@ const ProductDetailPage = ({ params }: Props) => {
             <BsHeart />
             <span>Add to wishlist</span>
           </button>
+
+          <div>
+            <div className="flex gap-4">
+              {product.photos.map((img, index) => (
+                <Image
+                  key={index}
+                  src={`https://api.timbu.cloud/images/${img?.url}`}
+                  alt={product.name}
+                  width={100}
+                  height={100}
+                  className="object-cover shadow-xl lg:h-42 lg:w-42 rounded-xl roundex-xl"
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="flex items-center justify-center w-full py-10 mx-auto md:w-6/12 lg:w-8/12 md:-mt-10 lg:px-20">

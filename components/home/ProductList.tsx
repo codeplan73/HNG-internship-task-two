@@ -10,20 +10,28 @@ import { ProductItem } from "@/types";
 const ProductList = () => {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState<ProductItem[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
 
   useEffect(() => {
     setLoading(true);
     const fetchProducts = async () => {
-      const response = await axios.get("/api/products");
+      const response = await axios.get(
+        `/api/products?page=${currentPage}&size=${pageSize}`
+      );
 
       console.log(response.data.items);
 
       setProducts(response.data.items);
     };
 
-    fetchProducts();
-    setLoading(false);
-  }, []);
+    fetchProducts().finally(() => setLoading(false));
+  }, [currentPage, pageSize]);
+
+  // Pagination Controls
+  const nextPage = () => setCurrentPage((prevPage) => prevPage + 1);
+  const prevPage = () =>
+    setCurrentPage((prevPage) => (prevPage > 1 ? prevPage - 1 : 1));
 
   if (loading) {
     return <div className="p-4 text-4xl bg-red-700 rounded">Loading...</div>;
@@ -41,6 +49,18 @@ const ProductList = () => {
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
+      </div>
+
+      <div className="flex items-center justify-center gap-4">
+        <button onClick={prevPage} className="px-4 py-2 bg-gray-300 rounded">
+          Prev
+        </button>
+        <div>
+          <span>Page</span> {currentPage}
+        </div>
+        <button onClick={nextPage} className="px-4 py-2 bg-gray-300 rounded">
+          Next
+        </button>
       </div>
     </div>
   );
