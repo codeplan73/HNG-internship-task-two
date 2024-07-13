@@ -17,7 +17,7 @@ const CartPage = () => {
 
   if (items.length === 0)
     return (
-      <div className="flex flex-col gap-4 items-center justify-center py-20">
+      <div className="flex flex-col items-center justify-center gap-4 py-20">
         <GiShoppingCart className="text-7xl text-primaryColor " />
         <p className="text-2xl md:text-4xl text-primaryColor">
           Your cart is empty
@@ -25,16 +25,18 @@ const CartPage = () => {
       </div>
     );
 
+  console.log(items);
+
   return (
-    <div className="flex flex-col md:flex-row items-start gap-6 py-6 md:px-12 md:py-12 w-full container">
-      <div className="flex flex-col gap-6 items-start w-full md:w-full lg:w-8/12 lg:px-12">
+    <div className="container flex flex-col items-start w-full gap-6 py-6 md:flex-row md:px-12 md:py-12">
+      <div className="flex flex-col items-start w-full gap-6 md:w-full lg:w-8/12 lg:px-12">
         <p className="flex items-end space-x-2">
           <span className="text-xl font-bold">Cart</span>
-          <span className="text-sm text-coolGray font-bold uppercase">
+          <span className="text-sm font-bold uppercase text-coolGray">
             {totalItem} items
           </span>
         </p>
-        <div className="flex flex-col gap-6 w-full ">
+        <div className="flex flex-col w-full gap-6 ">
           {items.map((item, index) => {
             const price = new Intl.NumberFormat("en-us", {
               style: "currency",
@@ -44,7 +46,7 @@ const CartPage = () => {
             return (
               <div
                 key={index}
-                className="flex items-start justify-start gap-8 md:justify-between w-full  border-b-2 pb-6"
+                className="flex items-start justify-start w-full gap-8 pb-6 border-b-2 md:justify-between"
               >
                 <div className="flex items-start space-x-8">
                   <Image
@@ -52,17 +54,17 @@ const CartPage = () => {
                     alt={item.name}
                     height={100}
                     width={100}
-                    className="h-32 w-32"
+                    className="w-32 h-32"
                   />
                   <div className="">
                     <div className="flex flex-col gap-2">
                       <p className="font-semibold text-wrap">{item.name}</p>
-                      <p className="flex items-start space-x-2">
+                      {/* <p className="flex items-start space-x-2">
                         <span>Color</span>
                         <span className="font-semibold">{item.color}</span>
-                      </p>
+                      </p> */}
                       <div className="flex items-center gap-6">
-                        <div className="flex items-center gap-6 border border-coolGray p-2 px-4">
+                        <div className="flex items-center gap-6 p-2 px-4 border border-coolGray">
                           <button
                             onClick={() =>
                               decreaseItemQuantity(item.id.toString())
@@ -92,14 +94,14 @@ const CartPage = () => {
                     </div>
                   </div>
                 </div>
-                <p className="font-semibold text-xl">{price}</p>
+                <p className="text-xl font-semibold">{price}</p>
               </div>
             );
           })}
         </div>
 
-        <p className="bg-green-50 p-2 rounded-sm border border-primaryColor">
-          <span className="text-primaryColor text-lg px-2">%</span>
+        <p className="p-2 border rounded-sm bg-green-50 border-primaryColor">
+          <span className="px-2 text-lg text-primaryColor">%</span>
           <span className="text-sm">
             10% Instant Discount with Federal Bank Debit Card on a main Spend of
             $150. TCA

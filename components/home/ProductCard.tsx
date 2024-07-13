@@ -1,29 +1,29 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Product } from "@/types";
+import { ProductItem } from "@/types";
 
 interface ProductCardProps {
-  product: Product;
+  product: ProductItem;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const price = new Intl.NumberFormat("en-us", {
     style: "currency",
     currency: "USD",
-  }).format(product.price);
+  }).format(product.current_price[0].USD[0]);
 
   return (
     <Link
       href={`/products/${product.id}`}
-      className="flex flex-col gap-2 items-start cursor-pointer w-full hover:drop-shadow-2xl transition-all duration-300 ease-in-out"
+      className="flex flex-col items-start w-full gap-2 transition-all duration-300 ease-in-out cursor-pointer hover:drop-shadow-2xl"
     >
       <Image
-        src={product.image}
+        src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
         alt={product.name}
         width={1000}
         height={1000}
-        className="md:h-64 h-96  w-full"
+        className="w-full md:h-64 h-96"
       />
 
       <p className="text-sm font-semibold">{product.name}</p>
