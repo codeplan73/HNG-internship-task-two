@@ -52,9 +52,7 @@ const CartProvider = ({ children }: PropsWithChildren<any>) => {
   const increaseItemQuantity = (itemId: string) => {
     setItems((prevItems) =>
       prevItems.map((item) =>
-        item.id === parseInt(itemId)
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
+        item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
       )
     );
   };
@@ -63,9 +61,7 @@ const CartProvider = ({ children }: PropsWithChildren<any>) => {
     setItems((prevItems) =>
       prevItems
         .map((item) =>
-          item.id === parseInt(itemId)
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
+          item.id === itemId ? { ...item, quantity: item.quantity - 1 } : item
         )
         .filter((item) => item.quantity > 0)
     );
@@ -75,7 +71,7 @@ const CartProvider = ({ children }: PropsWithChildren<any>) => {
     setItems((prevItems) => {
       return prevItems
         .map((item) => {
-          if (item.id === parseInt(itemId)) {
+          if (item.id === itemId) {
             return { ...item, quantity: item.quantity - 1 };
           }
           return item;
@@ -85,9 +81,7 @@ const CartProvider = ({ children }: PropsWithChildren<any>) => {
   };
 
   const removeItem = (itemId: string) => {
-    setItems((prevItems) =>
-      prevItems.filter((item) => item.id !== parseInt(itemId))
-    );
+    setItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
   };
 
   const totalItem = items.reduce((acc, item) => acc + item.quantity, 0);

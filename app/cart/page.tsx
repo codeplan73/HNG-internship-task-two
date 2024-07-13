@@ -25,8 +25,6 @@ const CartPage = () => {
       </div>
     );
 
-  console.log(items);
-
   return (
     <div className="container flex flex-col items-start w-full gap-6 py-6 md:flex-row md:px-12 md:py-12">
       <div className="flex flex-col items-start w-full gap-6 md:w-full lg:w-8/12 lg:px-12">

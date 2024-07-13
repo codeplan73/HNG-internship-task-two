@@ -139,8 +139,8 @@ const ProductDetailPage = ({ params }: Props) => {
               onClick={() => {
                 addItem({
                   ...product,
-                  id: Number(product.id),
-                  product_id: product.id,
+                  id: product.id,
+                  // product_id: product.id,
                   quantity: quantity,
                   price: product.current_price,
                   image: `https://api.timbu.cloud/images/${product.photos[0].url}`,
