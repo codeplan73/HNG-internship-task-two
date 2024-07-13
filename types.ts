@@ -97,3 +97,14 @@ export interface Product {
   featured_reviews: any | null;
   unavailability: any[];
 }
+
+export interface Collection {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  rating: number;
+  totalRating: number;
+  color?: string[];
+  image: string;
+}
